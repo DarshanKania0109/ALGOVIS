@@ -1,0 +1,66 @@
+form {
+  width: 25%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 3% auto;
+  margin-top: 11%;
+  border: 0.2px solid azure;
+  border-radius: 20%;
+}
+input {
+  border: .1em solid cornflowerblue;
+  width: auto;
+  height: 20%;
+  color: crimson;
+  font-weight: 700;
+  font-size: large;
+}
+#username,
+#password,
+.button {
+  margin: 0.8em;
+}
+button {
+  border-radius: 20px;
+  border: solid 3px teal;
+  font-weight: 550;
+  background-color: teal;
+  color: white;
+  font-size: x-large;
+  margin: 5px;
+}
+a {
+  text-decoration: none;
+  color: greenyellow;
+}
+
+body {
+  margin: 0px;
+  background-color: black;
+  background-image: url("../Images/ALGOVIS_LOGO.png");
+  background-repeat: no-repeat;
+  background-size: 80vw;
+  background-position: center;
+  background-position-y: -100px;
+}
+.form {
+  color: azure;
+  transition: all 0.5s ease-in-out 0s;
+  font-size: x-large;
+  backdrop-filter: blur(50px);
+}
+.form:hover {
+  color: greenyellow;
+  border-radius: 30px;
+  transform: scale(1.12);
+  box-shadow: 0px 0px 12px 8px turquoise;
+}
+h1 {
+  color: gold;
+}
+button:hover {
+  background-color: azure;
+  color: royalblue;
+}

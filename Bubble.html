@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Bubble.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <img src="./Images/ALGOVIS LOGO-1-Transparent.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./Main.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Sorting Algorithm
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item btn btn-primary" href="Selection.html">Selection Sort</a></li>
+                            <li><a class="dropdown-item btn btn-primary" href="Quick.html">Quick Sort</a></li>
+                            <li><a class="dropdown-item btn btn-primary" href="Insertion.html">Insertion Sort</a></li>
+                            <li><a class="dropdown-item btn btn-primary" href="Merge.html">Merge Sort</a></li>
+                            <li><a class="dropdown-item btn btn-primary" href="Radix.html">Radix Sort</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Searching Algorithm
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item bg-outline-primary" href="#">Binary Search</a></li>
+                            <li><a class="dropdown-item bg-outline-primary" href="#">Linear Search</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="buttons">
+                    <a href="./index.html">
+                        <button class="btn btn-light b1">Login</button>
+                    </a>
+                    <a href="./Signup.html">
+                        <button class="btn btn-dark b2">Signup</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="logo-container">
+        <h1 class="text-center" id="page-logo">BUBBLE SORT</h1>
+    </div>
+
+    <div class="entry">
+        <form action="" id="entry">
+
+            <div class="row">
+                <div class="col-md-2 col-sm-0"></div>
+
+                <div class="col-md-3 col-sm-6">
+                    <label for="elements" class="form-label">Enter no. of elements: </label>
+                </div>
+
+                <div class="col-md-5 col-sm-6">
+                    <input type="number" class="form-control" id="elements" name="elements"
+                        aria-describedby="elementHelp" min="1" max="50" value="7" required>
+                    <div id="elementHelp" class="form-text">
+                        Enter a number between 1 and 50
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-0"></div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-0"></div>
+                <div class="col-md-3 col-sm-6">
+                    <button type="button" class="btn btn-light my-2 entry-btn">Generate Random Array</button>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <button class="btn btn-light my-3 entry-btn" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Enter Each Element
+                    </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-0"></div>
+                <div class="collapse col-md-8 col-sm-6" id="collapseExample">
+                    <div class="card card-body">
+                        <label for="inputelement">Enter elements: </label>
+                        <input type="text" class="form-control" pattern="[0-9,]" id="inputelement"
+                            aria-describedby="inputelementHelp">
+                        <div id="inputelementHelp" class="form-text">Enter each element separated by comma ","</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-0"></div>
+                <div class="col-md-8 col-sm-6">
+                    <button type="submit" class="btn btn-light form-control entry-btn" id="sort-btn">Sort</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="boxes">
+
+    </div>
+
+    <div class="container" id="controls">
+        <div class="row" id="cont-row">
+            <div class="col-md-4 col-sm-6">
+                <label for="speed" id="rangelabel">Speed: </label>
+                <input type="range" class="form-range" min="0.25" max="2" step="0.25" value="1" id="speed">
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group me-2" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-primary my-2" data-bs-toggle="tooltip"
+                            data-bs-title="Previous Step">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-skip-backward-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="btn-group me-2" role="group" aria-label="Second group">
+                        <button type="button" class="btn btn-primary my-2" data-bs-toggle="tooltip"
+                            data-bs-title="Play/Pause">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-pause-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5" />
+                            </svg>
+                        </button>
+                        <button type="button" class="btn btn-primary my-2" data-bs-toggle="tooltip"
+                            data-bs-title="Reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                                <path
+                                    d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="btn-group" role="group" aria-label="Third group">
+                        <button type="button" class="btn btn-primary my-2" data-bs-toggle="tooltip"
+                            data-bs-title="Next Step">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-skip-forward-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="code-container">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active code-btn" id="nav-C++-tab" data-bs-toggle="tab" data-bs-target="#nav-C++"
+                type="button" role="tab" aria-controls="nav-C++" aria-selected="true">C++</button>
+            <button class="nav-link code-btn" id="nav-Java-tab" data-bs-toggle="tab" data-bs-target="#nav-Java"
+                type="button" role="tab" aria-controls="nav-Java" aria-selected="false">Java</button>
+            <button class="nav-link code-btn" id="nav-clanguage-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-clanguage" type="button" role="tab" aria-controls="nav-clanguage"
+                aria-selected="false">C Language</button>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-C++" role="tabpanel" aria-labelledby="nav-C++-tab"
+                tabindex="0">
+                <pre class="code">
+                <code>
+//C++ code here
+// Bubble sort in C++
+
+#include&lt;iostream&gt;
+using namespace std;
+
+// perform bubble sort
+void bubbleSort(int array[], int size) {
+
+  // loop to access each array element
+  for (int step = 0; step < size; ++step) {
+      
+    // loop to compare array elements
+    for (int i = 0; i < size - step; ++i) {
+
+      // compare two adjacent elements
+      // change > to < to sort in descending order
+      if (array[i] > array[i + 1]) {
+
+        // swapping elements if elements
+        // are not in the intended order
+        int temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+      }
+    }
+  }
+}
+
+// print array
+void printArray(int array[], int size) {
+  for (int i = 0; i < size; ++i) {
+    cout << "  " << array[i];
+  }
+  cout << "\n";
+}
+
+int main() {
+  int data[] = {-2, 45, 0, 11, -9};
+  
+  // find array's length
+  int size = sizeof(data) / sizeof(data[0]);
+  
+  bubbleSort(data, size);
+  
+  cout << "Sorted Array in Ascending Order:\n";  
+  printArray(data, size);
+}
+                </code>
+                </pre>
+            </div>
+            <div class="tab-pane fade" id="nav-Java" role="tabpanel" aria-labelledby="nav-Java-tab" tabindex="0">
+                <pre class="code">
+                <code>
+//Java code here
+// Bubble sort in Java
+
+import java.util.Arrays;
+
+class Main {
+
+  // perform the bubble sort
+  static void bubbleSort(int array[]) {
+    int size = array.length;
+    
+    // loop to access each array element
+    for (int i = 0; i < size - 1; i++)
+    
+      // loop to compare array elements
+      for (int j = 0; j < size - i - 1; j++)
+
+        // compare two adjacent elements
+        // change > to < to sort in descending order
+        if (array[j] > array[j + 1]) {
+
+          // swapping occurs if elements
+          // are not in the intended order
+          int temp = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = temp;
+        }
+  }
+
+  public static void main(String args[]) {
+      
+    int[] data = { -2, 45, 0, 11, -9 };
+    
+    // call method using class name
+    Main.bubbleSort(data);
+    
+    System.out.println("Sorted Array in Ascending Order:");
+    System.out.println(Arrays.toString(data));
+  }
+}             
+                </code>
+                </pre>
+            </div>
+            <div class="tab-pane fade" id="nav-clanguage" role="tabpanel" aria-labelledby="nav-clanguage-tab"
+                tabindex="0">
+                <pre class="code">
+                <code>
+//C Language code here
+// Bubble sort in C
+
+#include&lt;stdio.h&gt;
+
+// perform the bubble sort
+void bubbleSort(int array[], int size) {
+
+  // loop to access each array element
+  for (int step = 0; step < size - 1; ++step) {
+      
+    // loop to compare array elements
+    for (int i = 0; i < size - step - 1; ++i) {
+      
+      // compare two adjacent elements
+      // change > to < to sort in descending order
+      if (array[i] > array[i + 1]) {
+        
+        // swapping occurs if elements
+        // are not in the intended order
+        int temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+      }
+    }
+  }
+}
+
+// print array
+void printArray(int array[], int size) {
+  for (int i = 0; i < size; ++i) {
+    printf("%d  ", array[i]);
+  }
+  printf("\n");
+}
+
+int main() {
+  int data[] = {-2, 45, 0, 11, -9};
+  
+  // find the array's length
+  int size = sizeof(data) / sizeof(data[0]);
+
+  bubbleSort(data, size);
+  
+  printf("Sorted Array in Ascending Order:\n");
+  printArray(data, size);
+}       
+                </code>
+                </pre>
+            </div>
+            <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab"
+                tabindex="0">
+                ...</div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

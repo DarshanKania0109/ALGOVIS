@@ -1,0 +1,72 @@
+body {
+  margin: 0px;
+  background-color: black;
+  background-image: url("../Images/ALGOVIS_LOGO.png");
+  background-repeat: no-repeat;
+  background-size: 80vw;
+  background-position: center;
+}
+
+form {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 65px;
+}
+
+.container {
+  width: 28vw;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: azure;
+  font-size: larger;
+  background-color: rgba(255, 255, 255, 0.306);
+  border-radius: 15px;
+  transition: all 0.5s ease-in-out 0s;
+  backdrop-filter: blur(80px);
+}
+
+.container:hover {
+  transform: scale(1.02);
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.874);
+  box-shadow: 0 0 12px 8px turquoise;
+}
+
+h1 {
+  margin: 10px;
+  padding: 10px;
+}
+
+.box {
+  margin: 5px;
+  padding: 5px;
+}
+
+.submit {
+  margin: 30px 5px 10px 5px;
+}
+
+#sub {
+  font-size: large;
+  background-color: rgb(16, 125, 251);
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 25px;
+}
+
+#sub:hover {
+  background-color: rgb(30, 0, 165);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+#sub:active {
+  transform: scale(0.9);
+}
+input {
+  color: crimson;
+}
